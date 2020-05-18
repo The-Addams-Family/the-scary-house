@@ -60,8 +60,8 @@ public class MoveTowardsHouseAI : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
         img.enabled = true;
         imageFade.SetTrigger("FadeToGame");
-        yield return new WaitForSeconds(4.0f);
-        SceneManager.LoadScene(1);
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(3);
     }
 
 }
