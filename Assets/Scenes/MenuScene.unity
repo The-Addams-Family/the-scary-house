@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 160938511}
   - component: {fileID: 160938510}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: MenuManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -573,7 +573,7 @@ GameObject:
   - component: {fileID: 1099182203}
   - component: {fileID: 1099182202}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: BackgroundSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1187,7 +1187,7 @@ GameObject:
   - component: {fileID: 1811207649}
   - component: {fileID: 1811207648}
   m_Layer: 5
-  m_Name: RawImage
+  m_Name: BackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
