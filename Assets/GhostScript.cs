@@ -7,7 +7,8 @@ public class GhostScript : MonoBehaviour
     [SerializeField] private GameObject ghostObject;
     [SerializeField] private float waitSeconds = 0.5f;
     [SerializeField] private float fadeSteps = 0.05f;
-
+    
+    private Animator _ghostMove; /* Added this for the ghost movement */
 
     private MeshRenderer _meshRenderer;
     private Material _material;
@@ -23,7 +24,7 @@ public class GhostScript : MonoBehaviour
         Color c = _material.color;
         c.a = 0;
         _material.color = c;
-
+        _ghostMove = ghostObject.transform.parent.GetComponent<Animator>();
         _fadeIn = FadeIn();
         _fadeOut = FadeOut();
     }
@@ -35,6 +36,7 @@ public class GhostScript : MonoBehaviour
             
             StartCoroutine(FadeIn());
         }
+        _ghostMove.SetBool("MoveGhost", true);
     }
 
     private void OnTriggerExit(Collider other) {
@@ -42,7 +44,8 @@ public class GhostScript : MonoBehaviour
             if (_fadeIn != null)
                 StopCoroutine(_fadeIn);
             StartCoroutine(FadeOut());
-        }        
+        }  
+        _ghostMove.SetBool("MoveGhost", false);      
     }
 
     IEnumerator FadeIn() {
