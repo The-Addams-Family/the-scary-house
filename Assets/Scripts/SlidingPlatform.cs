@@ -12,4 +12,13 @@ public class SlidingPlatform : MonoBehaviour
           other.gameObject.transform.parent = transform.parent.transform;
         }
     }
+
+    private void OnTriggerExit(Collider other) {
+        
+        if(other.CompareTag("Player")){
+          
+          other.gameObject.transform.parent = null;
+        }
+    }
+
 }
