@@ -54,7 +54,7 @@ public class GhostScript : MonoBehaviour
             
             c.a = f;
             _material.color = c;
-            Debug.Log(f);
+            //Debug.Log(f);
             yield return new WaitForSeconds(waitSeconds);
         }
        
@@ -66,7 +66,7 @@ public class GhostScript : MonoBehaviour
            
             c.a = f;
             _material.color = c;
-            Debug.Log(f);
+            //Debug.Log(f);
             yield return new WaitForSeconds(waitSeconds);
         }
 
