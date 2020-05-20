@@ -17,7 +17,7 @@ public class MoveTowardsHouseAI : MonoBehaviour
     public Image img;
    
    private void Start() {
-       img.enabled = false;
+       imageFade.SetBool("FadeOut", true);
        playerEnter.enabled = false;
        StartCoroutine(FollowPath());
    }
@@ -59,8 +59,9 @@ public class MoveTowardsHouseAI : MonoBehaviour
         playerEnter.SetTrigger("Enter");
         yield return new WaitForSeconds(2.0f);
         img.enabled = true;
-        imageFade.SetTrigger("FadeToGame");
-        yield return new WaitForSeconds(2f);
+        imageFade.SetBool("FadeOut", false);
+        //imageFade.SetTrigger("FadeToGame");
+        yield return new WaitUntil(()=>img.color.a==1);
         SceneManager.LoadScene(3);
     }
 
