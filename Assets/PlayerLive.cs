@@ -6,7 +6,6 @@ public class PlayerLive : MonoBehaviour
 {
     int maxLife = 3;
     int playerLife;
-    
 
     public HealthBar bar;
     // Start is called before the first frame update
@@ -28,7 +27,7 @@ public class PlayerLive : MonoBehaviour
         }
     }
 
-    void onDamage(){
+    public void onDamage(){
         playerLife -= 1;
         bar.SetHealth(playerLife);
     }
