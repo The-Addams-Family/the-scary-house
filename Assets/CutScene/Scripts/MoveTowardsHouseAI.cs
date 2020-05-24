@@ -18,6 +18,10 @@ public class MoveTowardsHouseAI : MonoBehaviour
    
    private void Start() {
        imageFade.SetBool("FadeOut", true);
+       Audio_Manager.Instance.RequestMusic(MUSICTYPE.NightAmbience,true);
+       Audio_Manager.Instance.SoundLoop(true);
+       Audio_Manager.Instance.RequestSound(SOUNDTYPE.running);
+       
        playerEnter.enabled = false;
        StartCoroutine(FollowPath());
    }
@@ -33,6 +37,7 @@ public class MoveTowardsHouseAI : MonoBehaviour
         foreach(Transform way in path){
             if(way.gameObject.CompareTag("GoRight")){
                 speed = 4;
+                Audio_Manager.Instance.RequestMusic(MUSICTYPE.Thunder,false);
                 transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x,45, transform.rotation.eulerAngles.z);
             }
             if(way.gameObject.CompareTag("GoToHouse")){
@@ -55,6 +60,8 @@ public class MoveTowardsHouseAI : MonoBehaviour
         doorAnim.SetTrigger("OpenDoor");
         yield return new WaitForSeconds(3.0f);
         transform.position = new Vector3(transform.position.x, transform.position.y+2f,transform.position.z);
+        Audio_Manager.Instance.RequestMusic(MUSICTYPE.IndoorAmbience,true);
+        Audio_Manager.Instance.MusicLoop(true);
         playerEnter.enabled = true;
         playerEnter.SetTrigger("Enter");
         yield return new WaitForSeconds(2.0f);
