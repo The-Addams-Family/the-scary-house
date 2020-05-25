@@ -7,6 +7,7 @@ TagManager:
   - GoToHouse
   - GoRight
   - Ghost
+  - FadeIn
   layers:
   - Default
   - TransparentFX

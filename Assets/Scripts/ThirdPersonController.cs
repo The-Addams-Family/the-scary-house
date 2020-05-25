@@ -25,6 +25,9 @@ public class ThirdPersonController : MonoBehaviour
     private float verticalRotation = 90;
 
     private float hAxis;
+    bool isWalking;
+    float stepTimer;
+    [SerializeField] float stepDuration = 0.3f;
 
     public float CornerTurnAngle {
         get { return cornerTurnAngle; }
@@ -53,6 +56,16 @@ public class ThirdPersonController : MonoBehaviour
 
                 verticalVelocity += gravity * Time.deltaTime;
         
+        isWalking = Mathf.Abs(hAxis) != 0f;
+         if(isWalking){
+             stepTimer += Time.deltaTime;
+             if(stepTimer > stepDuration){
+                 stepTimer = 0f;
+                 Audio_Manager.Instance.RequestSound(SOUNDTYPE.step);
+             }
+         }else{
+             stepTimer =0f;
+         }
         /*
          Move(hAxis);
 
@@ -74,6 +87,7 @@ public class ThirdPersonController : MonoBehaviour
     private void LateUpdate() {
 
          Move(hAxis);
+         
 
          Turn(hAxis);        
     }

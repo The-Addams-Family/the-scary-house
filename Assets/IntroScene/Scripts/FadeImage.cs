@@ -28,8 +28,10 @@ public class FadeImage : MonoBehaviour
     }
     IEnumerator Fadeimage(){    
         _animator.SetTrigger("FadeOut");
+        
         yield return new WaitUntil(()=>img.color.a==1); 
         SceneManager.LoadScene(1);
+        toPlay = false;
         
     }
     void SetPlayOver(){

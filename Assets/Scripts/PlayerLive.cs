@@ -23,6 +23,7 @@ public class PlayerLive : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if(other.CompareTag("Ghost")){
+            Audio_Manager.Instance.RequestSound(SOUNDTYPE.loselife);
             onDamage();
         }
     }

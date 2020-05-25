@@ -37,8 +37,12 @@ public class CreditationAnim : MonoBehaviour
 
         credText.enabled = true;
         credTextNames.enabled = true;
+        
         _animator.SetTrigger("playAnim");
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(4);
+        Audio_Manager.Instance.MusicLoop(false);
+        Audio_Manager.Instance.RequestMusic(MUSICTYPE.Laugh,true);
+        yield return new WaitForSeconds(4);
         _animator.SetTrigger("playFadeOut");
         yield return new WaitForSeconds(3);
         if(OnAnimateTextOver != null){
