@@ -13,7 +13,7 @@ public class MoveTowardsHouseAI : MonoBehaviour
     public Animator imageFade;
     public Animator playerEnter;
 
-
+    Coroutine currentCoroutine;
     public Image img;
    
    private void Start() {
@@ -50,7 +50,12 @@ public class MoveTowardsHouseAI : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if(other.CompareTag("GoToHouse")){
-            StartCoroutine(OpenDoor());
+            currentCoroutine = StartCoroutine(OpenDoor());
+        }
+        if(other.CompareTag("FadeIn")){
+            if(currentCoroutine != null)
+                StopCoroutine(currentCoroutine);
+            currentCoroutine = StartCoroutine(TransitionToScene());
         }
 
     }
@@ -64,7 +69,10 @@ public class MoveTowardsHouseAI : MonoBehaviour
         Audio_Manager.Instance.MusicLoop(true);
         playerEnter.enabled = true;
         playerEnter.SetTrigger("Enter");
-        yield return new WaitForSeconds(2.0f);
+        
+    }
+
+    IEnumerator TransitionToScene(){
         img.enabled = true;
         imageFade.SetBool("FadeOut", false);
         //imageFade.SetTrigger("FadeToGame");
