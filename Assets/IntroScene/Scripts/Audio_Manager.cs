@@ -20,19 +20,19 @@ public class Audio_Manager : MonoBehaviour
 {
     public static Audio_Manager Instance {get; private set;}
     public AudioSource[] myAudioSource;
-    [SerializeField] AudioClip[] clips;
+    [SerializeField] AudioClip[] clips = default;
         [SerializeField] private AudioSource myAudioSound;
 
     [System.Serializable]
     private class SoundGroup{
         [SerializeField] private string name;
-        public AudioClip[] sounds;
-        public float[] volume;
+        public AudioClip[] sounds = default;
+        public float[] volume = default;
     }
     [SerializeField] private SoundGroup[] soundGroups;
 
     [SerializeField] float musicFadeDuration = 1f;
-    [SerializeField] AnimationCurve curveMusic;
+    [SerializeField] AnimationCurve curveMusic = default;
     
     Coroutine musicFade;
     int musicIndex;
