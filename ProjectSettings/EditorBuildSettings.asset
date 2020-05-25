@@ -21,6 +21,6 @@ EditorBuildSettings:
     path: Assets/CutScene/Scene/CutScene.unity
     guid: 50a861df53849d4729ecc109dc7e0251
   - enabled: 1
-    path: Assets/Scenes/IndoorScene.unity
+    path: Assets/IndoorScene/IndoorScene.unity
     guid: bf6d27ddbee3243ff90fd9d09d3c8c06
   m_configObjects: {}
