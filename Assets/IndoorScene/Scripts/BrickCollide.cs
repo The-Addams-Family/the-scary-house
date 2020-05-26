@@ -28,7 +28,7 @@ public class BrickCollide : MonoBehaviour
     private void OnCollisionEnter(Collision other) {
         if(other.gameObject.name.Equals("Player")){
             Audio_Manager.Instance.RequestSound(SOUNDTYPE.loselife);
-            player.onDamage();    
+            player.OnDamage();    
         }
         StartCoroutine(DestroyBrick());
     }

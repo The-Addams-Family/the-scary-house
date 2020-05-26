@@ -11,10 +11,14 @@ public class PlayerLive : MonoBehaviour
     public HealthBar bar;
     Animator deathTextAnim;
 
+    public Transform initialTransform;
+
+    CharacterController controller;
     bool isEmpty;
     // Start is called before the first frame update
     void Start()
     {
+        controller = GetComponent<CharacterController>();
         deathTextAnim = deathText.GetComponent<Animator>();
         deathTextAnim.SetBool("AnimateText", false);
         playerLife = maxLife;
@@ -25,7 +29,6 @@ public class PlayerLive : MonoBehaviour
     void Update()
     {
         if(isEmpty){
-            Debug.Log("Run this line");
             StartCoroutine(AnimateDeathText());
             Audio_Manager.Instance.RequestSound(SOUNDTYPE.death);
         }
@@ -34,11 +37,11 @@ public class PlayerLive : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if(other.CompareTag("Ghost")){
             Audio_Manager.Instance.RequestSound(SOUNDTYPE.loselife);
-            onDamage();
+            OnDamage();
         }
     }
 
-    public void onDamage(){
+    public void OnDamage(){
         playerLife -= 1;
         bar.SetHealth(playerLife);
         if(playerLife <= 0)
@@ -47,7 +50,18 @@ public class PlayerLive : MonoBehaviour
 
     IEnumerator AnimateDeathText(){
         deathTextAnim.SetBool("AnimateText", true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2.2f);
+        OnPlayerDeath();
         isEmpty = false;
+        
+    }
+
+    void OnPlayerDeath(){
+        controller.enabled = false;
+        transform.position = initialTransform.position;
+        deathTextAnim.SetBool("AnimateText", false);
+        playerLife = maxLife;
+        bar.SetMaxHealth(maxLife);
+        controller.enabled = true;
     }
 }
