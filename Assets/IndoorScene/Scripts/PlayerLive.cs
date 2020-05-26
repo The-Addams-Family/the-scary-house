@@ -30,7 +30,6 @@ public class PlayerLive : MonoBehaviour
     {
         if(isEmpty){
             StartCoroutine(AnimateDeathText());
-            Audio_Manager.Instance.RequestSound(SOUNDTYPE.death);
         }
     }
 
@@ -50,6 +49,7 @@ public class PlayerLive : MonoBehaviour
 
     public IEnumerator AnimateDeathText(){
         deathTextAnim.SetBool("AnimateText", true);
+        Audio_Manager.Instance.RequestSound(SOUNDTYPE.death);
         yield return new WaitForSeconds(2.2f);
         OnPlayerDeath();
         isEmpty = false;
