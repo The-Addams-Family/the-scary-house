@@ -41,7 +41,7 @@ public class MoveTowardsHouseAI : MonoBehaviour
                 transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x,45, transform.rotation.eulerAngles.z);
             }
             if(way.gameObject.CompareTag("GoToHouse")){
-                speed = 2;
+                
                 transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x,45, transform.rotation.eulerAngles.z);
             }
             yield return StartCoroutine(MoveToPath(way.position,speed));
