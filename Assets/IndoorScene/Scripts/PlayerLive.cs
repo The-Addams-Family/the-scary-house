@@ -48,7 +48,7 @@ public class PlayerLive : MonoBehaviour
             isEmpty = true;
     }
 
-    IEnumerator AnimateDeathText(){
+    public IEnumerator AnimateDeathText(){
         deathTextAnim.SetBool("AnimateText", true);
         yield return new WaitForSeconds(2.2f);
         OnPlayerDeath();
