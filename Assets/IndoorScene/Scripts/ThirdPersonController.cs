@@ -85,12 +85,12 @@ public class ThirdPersonController : MonoBehaviour
     }
 
     private void LateUpdate() {
-        if(isWalking){
+        
             Move(hAxis);
          
 
             Turn(hAxis); 
-        }
+       
                 
     }
 
