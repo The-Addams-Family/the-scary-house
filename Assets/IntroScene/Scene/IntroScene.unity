@@ -3101,8 +3101,8 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 60495acf3ca3f14bcb18c22bf987898b, type: 3}
     - {fileID: 8300000, guid: e2ecd4866c829c522a86a33fa5aad188, type: 3}
     volume:
-    - 0.1
-    - 0.2
+    - 0.8
+    - 1
   - name: loselife
     sounds:
     - {fileID: 8300000, guid: 7883d39863589171d9872bfc5c691f6c, type: 3}

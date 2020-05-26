@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/StartMenu/MenuScene.unity
     guid: 8c60c8498b0a403418f5dd9f8e31c514
   - enabled: 0
-    path: Assets/StartMenu/OutdoorScene.unity
-    guid: 5b336ceead8bb1b4d84654d6554d03b1
-  - enabled: 0
     path: Assets/StartMenu/scen3.unity
     guid: 018aef365383ed3438cd598b51e1509b
   - enabled: 1
