@@ -2,6 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// Håller reda på vilken riktning man har, det är antingen vänster eller höger
+public enum PlayerDirection
+{
+    Right,
+    Left
+}
+
 public class ThirdPersonController : MonoBehaviour
 {
 
@@ -13,7 +21,7 @@ public class ThirdPersonController : MonoBehaviour
 
     [SerializeField] private float gravity = -9.82f;
 
-    [SerializeField] private float cornerTurnAngle = 0f;
+    [SerializeField] private float cornerTurnAngle = 90f;
 
     [SerializeField] private float backAngle = 0f;
     [SerializeField] private float forwardAngle = 180f;
@@ -28,6 +36,18 @@ public class ThirdPersonController : MonoBehaviour
     bool isWalking;
     float stepTimer;
     [SerializeField] float stepDuration = 0.3f;
+
+    private PlayerDirection _direction;
+
+
+    public PlayerDirection Direction {
+        get { return _direction; }
+    }    
+
+    public float WalkAngle
+    {
+        get { return Direction == PlayerDirection.Right ? cornerTurnAngle : cornerTurnAngle - 180; }
+    }    
 
     public float CornerTurnAngle {
         get { return cornerTurnAngle; }
@@ -66,32 +86,13 @@ public class ThirdPersonController : MonoBehaviour
          }else{
              stepTimer =0f;
          }
-        /*
-         Move(hAxis);
-
-         Turn(hAxis);
-         */
-    
         
-    }
-
-    private void FixedUpdate() {
-        /*
-        
-         Move(hAxis);
-
-         Turn(hAxis);
-        */
     }
 
     private void LateUpdate() {
         
             Move(hAxis);
-         
-
             Turn(hAxis); 
-       
-                
     }
 
     private void Move(float input) {
@@ -109,8 +110,10 @@ public class ThirdPersonController : MonoBehaviour
          // Detta ser att rotera karaktären 180 grader när man byter flyttriktningen
         if (input > 0.1f) {
             verticalRotation = backAngle + cornerTurnAngle;
+            _direction = PlayerDirection.Left;
         } else if (input < -0.1f) {
             verticalRotation = forwardAngle + cornerTurnAngle;
+            _direction = PlayerDirection.Right;
         }
 
         Vector3 rot = transform.rotation.eulerAngles;

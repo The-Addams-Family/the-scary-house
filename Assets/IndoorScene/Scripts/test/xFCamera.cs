@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class xFCamera : MonoBehaviour
 {
-    [SerializeField] private xTPController target;
+    [SerializeField] private ThirdPersonController target;
    // [SerializeField] private Transform target;
     [SerializeField] private float cameraSpeed = 15f;
     [SerializeField] private FloatVariable zOffsetScriptableObject;
