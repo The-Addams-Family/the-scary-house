@@ -8,6 +8,7 @@ public class PumpkinsMoving : MonoBehaviour
 
     private float[] speed = { 1.5f, 1f, 1.75f };
 
+    
     void Update()
     {
         MovingPumkins();
@@ -21,7 +22,7 @@ public class PumpkinsMoving : MonoBehaviour
 
         foreach (var item in movingPumkins)
         {
-            item.transform.position = new Vector3(Mathf.PingPong(Time.time * speed[count], 4), item.transform.position.y, item.transform.position.z);
+            item.transform.localPosition = new Vector3(Mathf.PingPong(Time.time * speed[count], 4), item.transform.localPosition.y, item.transform.localPosition.z);
             count++;
         }
     }
