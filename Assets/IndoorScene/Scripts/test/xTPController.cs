@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+/*
 // Håller reda på vilken riktning man har, det är antingen vänster eller höger
 public enum PlayerDirection
 {
     Right,
     Left
 }
+*/
 public class xTPController : MonoBehaviour
 {
 

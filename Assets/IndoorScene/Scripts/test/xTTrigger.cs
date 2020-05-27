@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class xTTrigger : MonoBehaviour
 {
-    [SerializeField] private xTPController character;
+    [SerializeField] private ThirdPersonController character;
     [SerializeField] private float enterAngle = 0.0000f;
     [SerializeField] private float exitAngle = 180.0000f;
 

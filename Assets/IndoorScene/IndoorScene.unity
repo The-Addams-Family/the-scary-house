@@ -945,7 +945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce189bbd416d48869bfceaf6ed8e52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1816765742}
+  target: {fileID: 1816765738}
   cameraSpeed: 15
   zOffsetScriptableObject: {fileID: 11400000, guid: 190cf3310d8a04cda987a7bf200c9338,
     type: 2}
@@ -3723,7 +3723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9172d92183ae548388d3eaeb41d817b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 1816765742}
+  character: {fileID: 1816765738}
   enterAngle: 90
   exitAngle: 270
   angleA: 0
