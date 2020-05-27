@@ -436,6 +436,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eeea524a97c184b3aadd2e30f9c029e9, type: 3}
   - {fileID: 8300000, guid: be3cbca527c5f435191cc362af959b2d, type: 3}
   - {fileID: 8300000, guid: d53a36c2b8a7fde8c910a9d712a61a36, type: 3}
+  - {fileID: 8300000, guid: 108d27fa6eec741f790f421a0170b266, type: 3}
   myAudioSound: {fileID: 7080884920637154167}
   soundGroups:
   - name: step
