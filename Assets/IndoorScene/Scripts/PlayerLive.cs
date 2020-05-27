@@ -11,6 +11,8 @@ public class PlayerLive : MonoBehaviour
     public HealthBar bar;
     Animator deathTextAnim;
 
+    public GameObject levelCompleteUI;
+
     public Transform initialTransform;
 
     CharacterController controller;
@@ -63,5 +65,19 @@ public class PlayerLive : MonoBehaviour
         playerLife = maxLife;
         bar.SetMaxHealth(maxLife);
         controller.enabled = true;
+    }
+
+    public void LevelCompleted(){
+        
+        Audio_Manager.Instance.RequestMusic(MUSICTYPE.LevelWin,true);
+        Audio_Manager.Instance.MusicLoop(false);
+        levelCompleteUI.SetActive(true);
+        StartCoroutine(PlayBackgroundMusic());
+    }
+
+    IEnumerator PlayBackgroundMusic(){
+        yield return new WaitForSeconds(3.2f);
+        Audio_Manager.Instance.RequestMusic(MUSICTYPE.AmbienceMenu,true);
+        Audio_Manager.Instance.MusicLoop(true);
     }
 }

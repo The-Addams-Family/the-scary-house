@@ -7,7 +7,9 @@ public enum MUSICTYPE{
     NightAmbience ,
     Thunder,
     Laugh,
-    IndoorAmbience
+    IndoorAmbience,
+    LevelWin,
+    AmbienceMenu
 }
 
 public enum SOUNDTYPE{
