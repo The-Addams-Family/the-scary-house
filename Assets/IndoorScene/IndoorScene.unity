@@ -391,12 +391,12 @@ PrefabInstance:
     - target: {fileID: 3253143175229229340, guid: 66d119254f340414b95d8ae69f231364,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -150
+      value: -106.8
       objectReference: {fileID: 0}
     - target: {fileID: 3253143175229229340, guid: 66d119254f340414b95d8ae69f231364,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -50
+      value: -36.27
       objectReference: {fileID: 0}
     - target: {fileID: 3253143175229229340, guid: 66d119254f340414b95d8ae69f231364,
         type: 3}
@@ -2223,7 +2223,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.38077003, y: 0.63113594}
   m_AnchorMax: {x: 0.6232301, y: 0.8204272}
-  m_AnchoredPosition: {x: -0.000030517578, y: -0.000030517578}
+  m_AnchoredPosition: {x: 0, y: -0.000061035156}
   m_SizeDelta: {x: 788.48035, y: 311.9522}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &225593613
@@ -3726,6 +3726,9 @@ MonoBehaviour:
   character: {fileID: 1816765742}
   enterAngle: 90
   exitAngle: 270
+  angleA: 0
+  angleB: 90
+  rangeTolerance: 0.09
 --- !u!65 &438398901
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4364,7 +4367,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.025, y: 0.8586287}
   m_AnchorMax: {x: 0.07327061, y: 0.9456556}
-  m_AnchoredPosition: {x: 2.5, y: -1.7000122}
+  m_AnchoredPosition: {x: 2.5, y: -1.6999512}
   m_SizeDelta: {x: 61, y: 62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &612541965
@@ -12363,7 +12366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
