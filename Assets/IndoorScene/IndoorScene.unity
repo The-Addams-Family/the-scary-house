@@ -3861,6 +3861,7 @@ GameObject:
   - component: {fileID: 438398899}
   - component: {fileID: 438398901}
   - component: {fileID: 438398900}
+  - component: {fileID: 438398902}
   m_Layer: 0
   m_Name: TurnTrigger01 (1)
   m_TagString: Untagged
@@ -3889,7 +3890,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438398898}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9172d92183ae548388d3eaeb41d817b3, type: 3}
   m_Name: 
@@ -3913,6 +3914,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.333208, y: 1, z: 3.9212284}
   m_Center: {x: 0.16153622, y: 0, z: -0.4045658}
+--- !u!114 &438398902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438398898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6520cd36aa54143d6a87d6d2aa19c95a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 1816765738}
+  exitAngle: 0
+  enterAngle: 90
 --- !u!1 &473506440
 GameObject:
   m_ObjectHideFlags: 0
