@@ -16,10 +16,17 @@ public class PlayerLive : MonoBehaviour
     public Transform initialTransform;
 
     CharacterController controller;
+    
+    ThirdPersonController playerThird;
+
+   
     bool isEmpty;
+    bool isturn;
+   
     // Start is called before the first frame update
     void Start()
     {
+        playerThird = GetComponent<ThirdPersonController>();
         controller = GetComponent<CharacterController>();
         deathTextAnim = deathText.GetComponent<Animator>();
         deathTextAnim.SetBool("AnimateText", false);
@@ -61,6 +68,7 @@ public class PlayerLive : MonoBehaviour
     void OnPlayerDeath(){
         controller.enabled = false;
         transform.position = initialTransform.position;
+        playerThird.CornerTurnAngle = 90f;
         deathTextAnim.SetBool("AnimateText", false);
         playerLife = maxLife;
         bar.SetMaxHealth(maxLife);
