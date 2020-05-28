@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PumkinTrigger : MonoBehaviour
+public class ChallengeTrigger : MonoBehaviour
 {
  
     [SerializeField] PlayerLive player;
