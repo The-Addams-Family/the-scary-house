@@ -13878,6 +13878,75 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.82329345, y: 0.6938701, z: 0.6619135}
   m_Center: {x: -0.00001129508, y: 0.013288694, z: 0.26327887}
+--- !u!1001 &1991299738822118759
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1991299737767779758, guid: 7ae0dc9b683da2842b77a460885d821f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 51.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991299737767779758, guid: 7ae0dc9b683da2842b77a460885d821f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991299737767779758, guid: 7ae0dc9b683da2842b77a460885d821f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 39.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991299737767779758, guid: 7ae0dc9b683da2842b77a460885d821f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991299737767779758, guid: 7ae0dc9b683da2842b77a460885d821f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991299737767779758, guid: 7ae0dc9b683da2842b77a460885d821f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991299737767779758, guid: 7ae0dc9b683da2842b77a460885d821f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991299737767779758, guid: 7ae0dc9b683da2842b77a460885d821f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991299737767779758, guid: 7ae0dc9b683da2842b77a460885d821f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991299737767779758, guid: 7ae0dc9b683da2842b77a460885d821f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991299737767779758, guid: 7ae0dc9b683da2842b77a460885d821f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991299737767779759, guid: 7ae0dc9b683da2842b77a460885d821f,
+        type: 3}
+      propertyPath: m_Name
+      value: HatchHandler
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7ae0dc9b683da2842b77a460885d821f, type: 3}
 --- !u!1001 &8950031976089296092
 PrefabInstance:
   m_ObjectHideFlags: 0
