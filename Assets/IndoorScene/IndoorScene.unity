@@ -12468,7 +12468,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1991299738822118759}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2006448313
+--- !u!114 &2006448318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13719,6 +13719,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pumpkin1
       objectReference: {fileID: 0}
+    - target: {fileID: 4995932980476131408, guid: a2da8a507df865b42a56369f52fd31ce,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5791669168150830502, guid: a2da8a507df865b42a56369f52fd31ce,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5791669168163670972, guid: a2da8a507df865b42a56369f52fd31ce,
         type: 3}
       propertyPath: m_Name
@@ -13799,6 +13809,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pumpkin2
       objectReference: {fileID: 0}
+    - target: {fileID: 8733328497191287366, guid: a2da8a507df865b42a56369f52fd31ce,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2da8a507df865b42a56369f52fd31ce, type: 3}
 --- !u!1 &1776171633030760530 stripped
@@ -13832,19 +13847,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1816765741}
---- !u!65 &1776171633030760546
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776171633030760530}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.82329345, y: 0.6938701, z: 0.6619135}
-  m_Center: {x: -0.00001129508, y: 0.013288694, z: 0.26327887}
 --- !u!114 &1776171633030760547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13858,19 +13860,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1816765741}
---- !u!65 &1776171633030760548
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776171633030760531}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.82329345, y: 0.6938701, z: 0.6619135}
-  m_Center: {x: -0.00001129508, y: 0.013288694, z: 0.26327887}
 --- !u!114 &1776171633030760549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13884,19 +13873,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1816765741}
---- !u!65 &1776171633030760550
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1776171633030760532}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.82329345, y: 0.6938701, z: 0.6619135}
-  m_Center: {x: -0.00001129508, y: 0.013288694, z: 0.26327887}
 --- !u!1001 &1991299738822118759
 PrefabInstance:
   m_ObjectHideFlags: 0
