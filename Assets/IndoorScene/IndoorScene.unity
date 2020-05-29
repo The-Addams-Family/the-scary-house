@@ -661,7 +661,7 @@ GameObject:
   - component: {fileID: 52867194}
   - component: {fileID: 52867193}
   m_Layer: 5
-  m_Name: Text (2)
+  m_Name: ClickText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2476,7 +2476,7 @@ GameObject:
   - component: {fileID: 247175176}
   - component: {fileID: 247175175}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: LevelCompletetext
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5356,7 +5356,7 @@ GameObject:
   - component: {fileID: 785488463}
   - component: {fileID: 785488462}
   m_Layer: 5
-  m_Name: Text
+  m_Name: CongratsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
