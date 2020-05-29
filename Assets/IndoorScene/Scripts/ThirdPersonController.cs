@@ -109,11 +109,16 @@ public class ThirdPersonController : MonoBehaviour
     private void Turn(float input) {
          // Detta ser att rotera karaktären 180 grader när man byter flyttriktningen
         if (input > 0.1f) {
-            verticalRotation = backAngle + cornerTurnAngle;
-            _direction = PlayerDirection.Left;
-        } else if (input < -0.1f) {
-            verticalRotation = forwardAngle + cornerTurnAngle;
+            
+            verticalRotation = backAngle + cornerTurnAngle; // OBS rotationen på karaktären
+            Debug.Log("RIGHT : " + verticalRotation);
             _direction = PlayerDirection.Right;
+        } else if (input < -0.1f) {
+
+           
+            verticalRotation = forwardAngle + cornerTurnAngle; // OBS rotationen på karaktären
+             Debug.Log("LEFT : " + verticalRotation);
+            _direction = PlayerDirection.Left;
         }
 
         Vector3 rot = transform.rotation.eulerAngles;
