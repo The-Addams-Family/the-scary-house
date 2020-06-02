@@ -32,6 +32,8 @@ public class ThirdPersonController : MonoBehaviour
 
     private float verticalRotation = 90;
 
+    private float _prevAngle = 0f;
+
     private float hAxis;
     bool isWalking;
     float stepTimer;
@@ -51,7 +53,7 @@ public class ThirdPersonController : MonoBehaviour
 
     public float CornerTurnAngle {
         get { return cornerTurnAngle; }
-         set { cornerTurnAngle = value; }
+         set { cornerTurnAngle = value; _prevAngle = value; }
     }
 
     // Start is called before the first frame update
@@ -107,17 +109,17 @@ public class ThirdPersonController : MonoBehaviour
     }
 
     private void Turn(float input) {
-         // Detta ser att rotera karaktären 180 grader när man byter flyttriktningen
+         // Detta ser till att rotera karaktären 180 grader när man byter flyttriktningen
         if (input > 0.1f) {
             
-            verticalRotation = backAngle + cornerTurnAngle; // OBS rotationen på karaktären
-            Debug.Log("RIGHT : " + verticalRotation);
+            verticalRotation = backAngle + cornerTurnAngle; //rotationen på karaktären
+           // Debug.Log("RIGHT : " + backAngle + " , "  + cornerTurnAngle );
             _direction = PlayerDirection.Right;
         } else if (input < -0.1f) {
 
            
-            verticalRotation = forwardAngle + cornerTurnAngle; // OBS rotationen på karaktären
-             Debug.Log("LEFT : " + verticalRotation);
+            verticalRotation = forwardAngle + cornerTurnAngle; // rotationen på karaktären
+            // Debug.Log("LEFT : " +  forwardAngle + " , "  + cornerTurnAngle );
             _direction = PlayerDirection.Left;
         }
 
@@ -125,4 +127,9 @@ public class ThirdPersonController : MonoBehaviour
         rot.y = Mathf.Lerp(rot.y, verticalRotation, 5f * Time.deltaTime);
         transform.rotation = Quaternion.Euler(rot);
     }
+
+    public void CancelExitAngle() {
+        cornerTurnAngle = _prevAngle;
+    }
+
 }

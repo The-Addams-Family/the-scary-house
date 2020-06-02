@@ -8,11 +8,6 @@ public class xTTrigger : MonoBehaviour
     [SerializeField] private float enterAngle = -90.0f; // 0.0000f;
     [SerializeField] private float exitAngle = 180.0f; // 180.0000f;
 
-    [SerializeField] private float angleA = 0.0000f;
-    [SerializeField] private float angleB = 90.000f; // 270.0000f;    
-
-    [SerializeField] private float rangeTolerance = 0.09f;    
-
 
     public float EnterAngle
     {
@@ -41,13 +36,12 @@ public class xTTrigger : MonoBehaviour
         get { return Quaternion.AngleAxis(ExitAngle, Vector3.up) * Vector3.forward; }
     }
 
-    /*
-    private void OnTriggerEnter(Collider other) {
-        if (other.tag == "Player") {
-            character.CornerTurnAngle = enterAngle;
-        }
+    private void OnTriggerExit(Collider other) {
+        if (character == null)
+            return;
+
+        character.CancelExitAngle(); // Så fort vi träder ut så avbryt rotationen
     }
-    */
 
     private void OnTriggerStay(Collider other) {
         if (other.tag == "Player") {
@@ -59,17 +53,18 @@ public class xTTrigger : MonoBehaviour
             Vector3 v = (character.transform.position - transform.position).normalized;
             Vector3 w = Quaternion.AngleAxis(character.WalkAngle, Vector3.up) * Vector3.forward;
 
-            DrawArrow.ForDebug(transform.position, v, Color.green);
-            DrawArrow.ForDebug(character.transform.position, w, Color.red);
-            // DrawArrow.ForGizmo(transform.position, )
+            //DrawArrow.ForDebug(transform.position, v, Color.green);
+            //DrawArrow.ForDebug(character.transform.position, w, Color.red);
+
             float df = Vector3.Dot(v, w);
 
             // Detta beräknar skalärprodukten och avläser om vi passerat origo av triggerobjektet, 
             // isåfall är ska rotera karaktären.
             if (df > 0.01f) {
-
+                // I förhållande till ingångsvinkeln beräkna skalärprodukten mot vinkeln som karaktären har
                 if (Vector3.Dot(w, -EnterDirection) > 0.01f) {
 
+                    // Avläser om vi kommer från vänster / höger om triggern
                     if (character.Direction == PlayerDirection.Right) {
                         character.CornerTurnAngle = ExitAngle;
                     } else {
@@ -85,9 +80,9 @@ public class xTTrigger : MonoBehaviour
                     }                    
                 }
             } else {
-                Debug.Log("BBBB");
+                // Debug.Log("OOOOOOO");
                 if (Vector3.Dot(w, -EnterDirection) > 0.01f) {
-
+                   // Debug.Log("AAAA");
                     if (character.Direction == PlayerDirection.Right) {
                         character.CornerTurnAngle = ExitAngle;
                     } else {
@@ -96,7 +91,10 @@ public class xTTrigger : MonoBehaviour
                     
                    // Debug.Log("ENTER : " + Vector3.Dot(w, -EnterDirection));
                 } else if (Vector3.Dot(w, -ExitDirection) > 0.01f){
+                    //Debug.Log("BBBB");
+
                     if (character.Direction == PlayerDirection.Right) {
+                        
                         character.CornerTurnAngle = EnterAngle;
                     } else {
                         character.CornerTurnAngle = EnterAngle + 180.0f;
@@ -105,10 +103,6 @@ public class xTTrigger : MonoBehaviour
 
             }
         }
-    }
-
-    private void OnTriggerExit(Collider other) {
-        
     }
 
     private void PrintVector(string m, Vector3 v) {
